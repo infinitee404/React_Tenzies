@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #0B2434;
+    padding: 2.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+main{
+    background-color: #F5F5F5;
+    height: 50rem;
+    max-width: 100rem;
+    border-radius: 1.33rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 5rem;
+    margin: 0;
+}
+
+.instructions {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    max-width: 50rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.dice-container {
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.dice-container{
+    display: grid;
+    grid-template:  auto auto / repeat(5, 1fr);
+    gap: 2rem;
+}
+
+.die-face{
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.66rem;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.die-num{
+    font-size: 4rem;
+}
+
+.roll-button{
+    background-color: #5035FF;
+    columns: white;
+    height: 6.5rem;
+    width: 15rem;
+    border: none;
+    border-radius: 0.66rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.4rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0.66rem 0.66rem 0.66rem rgba(0,0,0,0.75);
+}
+
+.roll-button:hover{
+    outline: none;
+    background-color: #3f26db;
+}
+
+.roll-button:active{
+    box-shadow: inset 0.66rem 0.66rem 1.33rem -0.4rem rgba(0, 0, 0, 0.5);
+}
+
+.stats{
+    display: flex; 
+    flex-direction: row;
+    gap: 20rem;
+    font-size: 2rem;
+}
+
+.scores > h6, .times > h6{
+    margin-top: -1.25rem;
+    color: gray;
+    font-size: 1rem;
+}
