@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./styles.css"
 import {nanoid} from "nanoid"
 import Confetti from "react-confetti";
 import Die from "./Die"
 
 const App = () => {
+
     const [dice, setDice] = useState(allNewDice)
     const [tenzies, setTenzies] = useState(false)
     
@@ -15,8 +16,6 @@ const App = () => {
       });
     const [timeIsRunning, setTimeIsRunning] = useState(false)
 
-    const width = 1864
-    const height = 930
     let highScore = NaN
     const intervalRef = useRef(null)
     
@@ -56,16 +55,14 @@ const App = () => {
 
     function checkGameOver() {
         if (tenzies === true) {
-          setTenzies(prevState => !prevState)
-          setDice(allNewDice)
-          setRollCount(-1)
-          checkHighScore()
-          setTimeIsRunning(false)
-          handleStopTime()
-          setTime({
-            seconds: 0, 
-            milliseconds: 0
-          })
+            setDice(allNewDice)
+            setRollCount(-1)
+            checkHighScore()
+            setTime({
+                seconds: 0, 
+                milliseconds: 0
+            })
+            setTenzies(prevState => !prevState)
         }
         rollDice()
       }
@@ -94,10 +91,6 @@ const App = () => {
                 {...die, isHeld: !die.isHeld} :
                 {...die}
         }))
-        if (tenzies){
-            setTimeIsRunning(false)
-            handleStopTime()
-        }
     }
 
     function handleStartTime() {
@@ -105,11 +98,6 @@ const App = () => {
         setTimeIsRunning(true);
         intervalRef.current = setInterval(() => {
           setTime((prevTime) => {
-            if (tenzies){
-              setTimeIsRunning(false);
-              handleStopTime();
-              return prevTime;
-            }
             const newMilliseconds = prevTime.milliseconds + 10;
             const newSeconds = prevTime.seconds + Math.floor(newMilliseconds / 1000);
       
@@ -137,9 +125,15 @@ const App = () => {
         }
     }, [dice])
 
+    useEffect(() => {
+        if(tenzies) {
+            handleStopTime();
+        }
+    }, [tenzies])
+
     return (
         <main>
-            {tenzies && <Confetti width={width} height={height}/>}
+            {tenzies && <Confetti width={window.innerWidth} height={window.innerHeight}/>}
             <h1 className="title">Tenzies</h1>
             <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
             <div className="dice-container">
