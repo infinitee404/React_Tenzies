@@ -1,12 +1,13 @@
 # Tenzies Game
-Welcome to the Tenzies Game! This project is a simple, yet addictive game built with React and Vite. The objective is to roll ten dice and get the same number on all of them as quickly as possible. The game tracks your best score and time, and is fully responsive for an optimal experience on all devices.
+Welcome to the Tenzies Game! This project is a simple game built with React and Vite. The objective is to roll ten dice and get the same number on all of them as quickly as possible. The game tracks your best score and time, and is fully responsive for an optimal experience on all devices.
 
 ## Features
-10 Dice: Roll up to ten dice at a time.
-Best Score: The game records and displays your best score.
-Best Time: The game records and displays your best time.
-Responsive Design: The game is fully responsive and works well on all devices.
-Demo
+- 10 Dice: Roll up to ten dice at a time.
+- Best Score: The game records and displays your best score.
+- Best Time: The game records and displays your best time.
+- Responsive Design: The game is fully responsive and works well on all devices.
+
+## Demo
 Check out the live demo of the game [here](https://infinitee404.github.io/React_Tenzies/).
 
 ## Installation
