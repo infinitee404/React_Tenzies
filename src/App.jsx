@@ -3,6 +3,7 @@ import './styles.css'
 import { nanoid } from 'nanoid'
 // import Confetti from 'react-confetti'
 import Die from './Die'
+// import Confetti from 'react-confetti'
 
 const App = () => {
 	const [dice, setDice] = useState(allNewDice)
