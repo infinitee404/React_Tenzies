@@ -16,10 +16,9 @@ body {
 
 main {
 	background-color: #f1f1f1;
-	height: 50rem;
 	max-width: 100rem;
 	border-radius: 1.33rem;
-	padding: 10rem;
+	padding: 3rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -41,16 +40,13 @@ main {
 }
 
 .dice-container {
-	display: grid;
-	grid-template: auto auto / repeat(5, 1fr);
-	gap: 2.5rem;
-	margin-bottom: 5rem;
-}
-
-.dice-container {
-	display: grid;
-	grid-template: auto auto / repeat(5, 1fr);
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 70%;
 	gap: 2rem;
+	margin-bottom: 5rem;
 }
 
 .roll-button {
@@ -58,27 +54,27 @@ main {
 	columns: white;
 	padding: 1.25rem 4rem;
 	border: none;
-	border-radius: 0.66rem;
+	border-radius: 12px;
 	font-family: 'Inter', sans-serif;
 	font-size: 2.4rem;
 	color: white;
 	cursor: pointer;
-	box-shadow: 0.66rem 0.66rem 0.66rem rgba(0, 0, 0, 0.75);
+	box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.75);
 }
 
 .roll-button:hover {
-	outline: none;
 	background-color: #3f26db;
 }
 
 .roll-button:active {
-	box-shadow: inset 0.66rem 0.66rem 1.33rem -0.4rem rgba(0, 0, 0, 0.5);
+	box-shadow: inset 12px 12px 24px -6px rgba(0, 0, 0, 0.5);
 }
 
 .stats {
 	display: flex;
 	flex-direction: row;
-	gap: 20rem;
+	width: 90%;
+	justify-content: space-between;
 	font-size: 2rem;
 }
 
@@ -88,5 +84,3 @@ main {
 	color: gray;
 	font-size: 1rem;
 }
-
-
